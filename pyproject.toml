@@ -42,6 +42,7 @@ dependencies = [
     "shapely",
     "xtgeo",
     "pyyaml",
+    "ruamel.yaml",
     "ert",
     "resfo",
     "pyarrow",
