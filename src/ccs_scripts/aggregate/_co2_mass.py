@@ -135,7 +135,7 @@ def translate_co2data_to_property(
             total_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASS_TOT", mass_as_grid["MASS_TOT"]["data"]),
                 ]
@@ -155,7 +155,7 @@ def translate_co2data_to_property(
             dissolved_water_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASSDISW", mass_as_grid["MASSDISW"]["data"]),
                 ]
@@ -177,7 +177,7 @@ def translate_co2data_to_property(
             dissolved_oil_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASSDISO", mass_as_grid["MASSDISO"]["data"]),
                 ]
@@ -199,7 +199,7 @@ def translate_co2data_to_property(
             free_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASS_GAS", mass_as_grid["MASS_GAS"]["data"]),
                 ]
@@ -219,7 +219,7 @@ def translate_co2data_to_property(
             free_gas_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASSFGAS", mass_as_grid["MASSFGAS"]["data"]),
                 ]
@@ -238,7 +238,7 @@ def translate_co2data_to_property(
             trapped_gas_mass_data["unrst_kw"].extend(
                 [
                     ("SEQNUM  ", [date_i32]),
-                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpyView()),
+                    ("INTEHEAD", unrst_data["INTEHEAD"][date_idx].numpy_view()),
                     ("LOGIHEAD", logihead_array),
                     ("MASSTGAS", mass_as_grid["MASSTGAS"]["data"]),
                 ]
@@ -297,7 +297,7 @@ def _create_custom_egrid_kw(
     custom_egrid = []
     for kw in kw_sequence:
         try:
-            val = grid_data[kw.rstrip()][0].numpyView()
+            val = grid_data[kw.rstrip()][0].numpy_view()
             custom_egrid.append((kw, val))
         except (AttributeError, ValueError, KeyError):
             try:
